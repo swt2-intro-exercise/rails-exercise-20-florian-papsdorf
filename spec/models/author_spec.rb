@@ -13,7 +13,7 @@ describe "Author model", type: :model do
     expect(author.homepage).to be_instance_of(String)
   end
 
-  it "should have a method name which returns the full name of an author" do
+  it "should have a method name which returns the full name of an authors" do
     expect(author.name).to eq("Donald Duck")
   end
 end

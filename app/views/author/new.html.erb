@@ -1,16 +1,16 @@
-<%= form_with scope: :author, local: true do |form| %>
+<%= form_with scope: :authors, url: author_path, local: true do |form| %>
   <p>
-    <%= form.label :"First name" %><br>
+    <%= form.label :first_name %><br>
     <%= form.text_field :first_name %>
   </p>
 
   <p>
-    <%= form.label :"Last name" %><br>
+    <%= form.label :last_name %><br>
     <%= form.text_area :last_name %>
   </p>
 
   <p>
-    <%= form.label :"Homepage" %><br>
+    <%= form.label :homepage %><br>
     <%= form.text_area :homepage %>
   </p>
 

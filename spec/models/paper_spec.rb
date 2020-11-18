@@ -27,4 +27,9 @@ RSpec.describe Paper, type: :model do
     wrong_paper = Paper.new({ title: 'James Bond', venue: "Leipzig", year: 'nineteen-fifty', created_at: some_date, updated_at: some_date })
     expect(wrong_paper).to_not be_valid
   end
+
+  it 'should have and belong to many authors' do
+    a_paper = FactoryBot.create :paper
+    expect(a_paper.authors).to be_empty
+  end
 end

@@ -16,4 +16,9 @@ describe "Author model", type: :model do
   it "should have a method name which returns the full name of an authors" do
     expect(author.name).to eq("Donald Duck")
   end
+
+  it 'should not validate without last name' do
+    wrong_author = Author.new({:first_name => "Donald", :homepage => "www.duck.de"})
+    expect(wrong_author).to_not be_valid
+  end
 end

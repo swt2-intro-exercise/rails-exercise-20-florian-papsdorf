@@ -8,9 +8,3 @@ describe 'Show author page', type: :feature do
     visit author_path(@alan)
   end
 end
-
-describe 'Show authors index page', type: :feature do
-  it 'should be render without error' do
-    visit authors_path
-  end
-end

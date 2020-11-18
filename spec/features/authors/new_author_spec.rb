@@ -23,4 +23,12 @@ describe 'New authors page', type: :feature do
     page.fill_in 'author[homepage]', with: 'www.donald-duck.de'
     find('input[type="submit"]').click
   end
+
+  it 'should display an error message if fills in only first name and homepage and not the last name' do
+    visit new_author_path
+    page.fill_in 'author[first_name]', with: 'Donald'
+    page.fill_in 'author[homepage]', with: 'www.donald.de'
+    find('input[type="submit"]').click
+    expect(page).to have_text('error')
+  end
 end

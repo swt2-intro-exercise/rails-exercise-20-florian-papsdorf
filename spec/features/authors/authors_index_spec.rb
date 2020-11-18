@@ -18,4 +18,9 @@ describe 'Show authors index page', type: :feature do
     expect(page).to have_text(@alan.name)
     expect(page).to have_link 'Show', href: author_path(@alan)
   end
+
+  it 'should display a link to add new authors' do
+    visit authors_path
+    expect(page).to have_link 'New', href: new_author_path
+  end
 end
